@@ -9,7 +9,13 @@ public class adminVO {
     private String email;
     private String senha; 
     private int iDADM;
+    private int nivel;
 
+    
+    public void setIDusuario(int iDUser){
+        this.iDUsuario = Iduser;
+    } 
+    
     public int getIDusuario(){
         return this.iDUsuario;
     }   
@@ -30,6 +36,10 @@ public class adminVO {
         return this.endereco;
     } 
 
+    public void setCPF(String cPFuser){
+        this.cPF = cpfuser;
+    } 
+  
     public String getCPF(){
         return this.cPF;
     } 
@@ -50,7 +60,18 @@ public class adminVO {
         return this.senha;
     } 
 
+    public void setIDADM(int iDADMuser){
+        this.iDADM = iDADMuser;
+    } 
     public int getIDADM(){
         return this.iDADM;
     } 
+    
+    public void setNivel (int niveluser){
+        this.nivel = niveluser;
+    }
+    
+    public int getNivel (){
+        return this.nivel;
+    }
 }
