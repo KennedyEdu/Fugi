@@ -1,4 +1,4 @@
-SSpackage VO;
+package VO;
 
 public class ObraVO {
     private int IDObra;
