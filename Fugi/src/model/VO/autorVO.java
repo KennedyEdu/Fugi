@@ -11,5 +11,5 @@ public class autorVO extends usuarioVO {
 
     public int getIdAuthor(){
         return this.idAutor;
-    } 
+    }
 }
