@@ -1,70 +1,66 @@
-package VO;
+package src.model.VO;
+
+import java.util.Date;
 
 public class ObraVO {
-    private int IDObra;
-    private String título;
+    private int idObra;
+    private String titulo;
     private String genero;
     private Date ano;
     private AutorVO autor;
-    private String status;
+    private String estado;
 
-    public void setIDObra(idBOOK){
-        if(idBOOK >= 0) {
-            this.IDObra = idBOOK; 
-        }
+    public void setIdObra(int idObra){
+        if(idObra >= 0) 
+            this.idObra = idObra; 
     }
 
-    public int getIDObra(){
-        return this.IDObra;
+    public int getIdObra(){
+        return this.idObra;
     }
 
-    public void setTítulo(String tituloBOOK){
-        if(tituloBOOK != null && tituloBOOK != "") {
-            this.título = tituloBOOK;
-        }
+    public void setTitulo(String titulo){
+        if(titulo != null && !(titulo.equals("")))
+            this.titulo = titulo;
     }
 
-    public String getTítulo(){
-        return this.título;
+    public String getTitulo(){
+        return this.titulo;
     } 
 
-    public void setGenero(String generoBOOK){
-        if(generoBOOK != null && generoBOOK != "") { 
-            this.genero = generoBOOK;
-        }
+    public void setGenero(String genero){
+        if(genero != null && !(genero.equals("")))
+            this.genero = genero;
     }
 
     public String getGenero(){
         return this.genero;
     }
 
-    public void setAno(String anoBOOK){
-        if(anoBOOK != null && anoBOOK != "") { 
-            this.ano = anoBOOK;
-        }
+    public void setAno(Date ano){
+        if(ano != null) 
+            this.ano = ano;  
     }
 
     public Date getAno(){
         return this.ano;
     }
 
-    public void setAutor(String autorBOOK){
-        if(autorBOOK != null && autorBOOK != "") { 
-            this.autor = autorBOOK; 
-        }
+    public void setAutor(AutorVO autor){
+        if(autor != null) 
+            this.autor = autor; 
     }
 
     public AutorVO getAutor(){
         return this.autor;
     }
 
-    public void setStatus(String statusBOOK){
-        if(tituloBOOK != null && tituloBOOK != "") { 
-            this.status = statusBOOK;
-        }
+    public void setEstado(String estado){
+        if(titulo != null && !(titulo.equals("")))
+            this.estado = estado;
     }
 
-    public String getStatus(){
-        return this.status; 
+    public String getEstado(){
+        return this.estado; 
     }
 }
