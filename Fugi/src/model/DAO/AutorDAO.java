@@ -9,22 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.model.VO.AutorVO;
+import src.model.VO.UsuarioVO;
 
-public class AutorDAO extends BaseDAO{
+public class AutorDAO extends BaseDAO implements UsuarioInterDAO, AutorInterDAO{
     
-    public void inserir(AutorVO autorvo) {
+    public void inserir(UsuarioVO usuario) {
 
         conectar = getConnection();
         String sql = "insert into autor (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";
         PreparedStatement ptst;
         try{
             ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, autorvo.getNome());
-            ptst.setString(2, autorvo.getCPF());
-            ptst.setString(3, autorvo.getEmail());
-            ptst.setString(4, autorvo.getSenha());
-            ptst.setInt(5, autorvo.getNivel());
-            ptst.setString(6, autorvo.getEndereco());
+            ptst.setString(1, usuario.getNome());
+            ptst.setString(2, usuario.getCPF());
+            ptst.setString(3, usuario.getEmail());
+            ptst.setString(4, usuario.getSenha());
+            ptst.setInt(5, usuario.getNivel());
+            ptst.setString(6, usuario.getEndereco());
 
             ptst.execute();
         }catch(SQLException erro) {
@@ -47,7 +48,7 @@ public class AutorDAO extends BaseDAO{
 
     public void editar(AutorVO autorVo) {
         conectar = getConnection();
-        String sql = "UPDATE autor SET (nome, cpf, email, senha, nivel, endereco) = (?, ?, ?, ?, ?, ?) WHERE id_autor= ?";
+        String sql = "UPDATE autor SET (nome, cpf, email, senha, endereco) = (?, ?, ?, ?, ?) WHERE id_autor= ?";
         PreparedStatement ptst;
         try { 
             ptst = conectar.prepareStatement(sql);
@@ -55,9 +56,8 @@ public class AutorDAO extends BaseDAO{
             ptst.setString(2, autorVo.getCPF());
             ptst.setString(3, autorVo.getEmail());
             ptst.setString(4, autorVo.getSenha());
-            ptst.setInt(5, autorVo.getNivel());
-            ptst.setString(6, autorVo.getEndereco());
-            ptst.setInt(7, autorVo.getIdAutor());
+            ptst.setString(5, autorVo.getEndereco());
+            ptst.setInt(6, autorVo.getIdAutor());
             ptst.executeUpdate();
         }catch(SQLException erro) {
             erro.printStackTrace();

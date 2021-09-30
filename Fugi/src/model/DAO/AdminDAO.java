@@ -9,22 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.model.VO.AdminVO;
+import src.model.VO.UsuarioVO;
 
-public class AdminDAO extends BaseDAO{
+public class AdminDAO extends BaseDAO implements UsuarioInterDAO, AdminInterDAO{
     
-    public void inserir(AdminVO adminvo) {
+    public void inserir(UsuarioVO usuario) {
 
         conectar = getConnection();
         String sql = "insert into admin (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";
         PreparedStatement ptst;
         try{
             ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, adminvo.getNome());
-            ptst.setString(2, adminvo.getCPF());
-            ptst.setString(3, adminvo.getEmail());
-            ptst.setString(4, adminvo.getSenha());
-            ptst.setInt(5, adminvo.getNivel());
-            ptst.setString(6, adminvo.getEndereco());
+            ptst.setString(1, usuario.getNome());
+            ptst.setString(2, usuario.getCPF());
+            ptst.setString(3, usuario.getEmail());
+            ptst.setString(4, usuario.getSenha());
+            ptst.setInt(5, usuario.getNivel());
+            ptst.setString(6, usuario.getEndereco());
 
             ptst.execute();
         }catch(SQLException erro) {
@@ -47,7 +48,7 @@ public class AdminDAO extends BaseDAO{
 
     public void editar(AdminVO adminVo) {
         conectar = getConnection();
-        String sql = "UPDATE admin SET (nome, cpf, email, senha, nivel, endereco) = (?, ?, ?, ?, ?, ?) WHERE id_admin= ?";
+        String sql = "UPDATE admin SET (nome, cpf, email, senha, endereco) = ( ?, ?, ?, ?, ?) WHERE id_admin= ?";
         PreparedStatement ptst;
         try { 
             ptst = conectar.prepareStatement(sql);
@@ -55,9 +56,8 @@ public class AdminDAO extends BaseDAO{
             ptst.setString(2, adminVo.getCPF());
             ptst.setString(3, adminVo.getEmail());
             ptst.setString(4, adminVo.getSenha());
-            ptst.setInt(5, adminVo.getNivel());
-            ptst.setString(6, adminVo.getEndereco());
-            ptst.setInt(7, adminVo.getIdAdm());
+            ptst.setString(5, adminVo.getEndereco());
+            ptst.setInt(6, adminVo.getIdAdm());
             ptst.executeUpdate();
         }catch(SQLException erro) {
             erro.printStackTrace();
@@ -78,6 +78,7 @@ public class AdminDAO extends BaseDAO{
             rs = st.executeQuery(sql);
             while(rs.next()){
                 AdminVO vo = new AdminVO();
+                vo.setIdAdm(rs.getInt("id_admin"));
                 vo.setNome(rs.getString("nome"));
                 vo.setCPF(rs.getString("cpf"));
                 vo.setEmail(rs.getString("email"));

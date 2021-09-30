@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseDAO {
+public abstract class BaseDAO implements BaseInterDAO {
     Connection conectar = null;
     
-    String url = "jdbc:mariadb://localhost:3306";
-    String user = "daniel_2357";
+    String url = "jdbc:postgresql://localhost:5432/Daniel_BD";
+    String user = "postgres";
     String password = "123";
 
     public Connection getConnection(){

@@ -9,22 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.model.VO.AvaliadorVO;
+import src.model.VO.UsuarioVO;
 
-public class AvaliadorDAO extends BaseDAO{
+public class AvaliadorDAO extends BaseDAO implements UsuarioInterDAO, AvaliadorInterDAO{
     
-    public void inserir(AvaliadorVO avaliadorvo) {
+    public void inserir(UsuarioVO usuario) {
 
         conectar = getConnection();
         String sql = "insert into avaliador (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";
         PreparedStatement ptst;
         try{
             ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, avaliadorvo.getNome());
-            ptst.setString(2, avaliadorvo.getCPF());
-            ptst.setString(3, avaliadorvo.getEmail());
-            ptst.setString(4, avaliadorvo.getSenha());
-            ptst.setInt(5, avaliadorvo.getNivel());
-            ptst.setString(6, avaliadorvo.getEndereco());
+            ptst.setString(1, usuario.getNome());
+            ptst.setString(2, usuario.getCPF());
+            ptst.setString(3, usuario.getEmail());
+            ptst.setString(4, usuario.getSenha());
+            ptst.setInt(5, usuario.getNivel());
+            ptst.setString(6, usuario.getEndereco());
 
             ptst.execute();
         }catch(SQLException erro) {
@@ -47,7 +48,7 @@ public class AvaliadorDAO extends BaseDAO{
 
     public void editar(AvaliadorVO avaliadorVo) {
         conectar = getConnection();
-        String sql = "UPDATE avaliador SET (nome, cpf, email, senha, nivel, endereco) = (?, ?, ?, ?, ?, ?) WHERE id_avaliador= ?";
+        String sql = "UPDATE avaliador SET (nome, cpf, email, senha, endereco) = (?, ?, ?, ?, ?) WHERE id_avaliador= ?";
         PreparedStatement ptst;
         try { 
             ptst = conectar.prepareStatement(sql);
@@ -55,9 +56,8 @@ public class AvaliadorDAO extends BaseDAO{
             ptst.setString(2, avaliadorVo.getCPF());
             ptst.setString(3, avaliadorVo.getEmail());
             ptst.setString(4, avaliadorVo.getSenha());
-            ptst.setInt(5, avaliadorVo.getNivel());
-            ptst.setString(6, avaliadorVo.getEndereco());
-            ptst.setInt(7, avaliadorVo.getIdAvaliador());
+            ptst.setString(5, avaliadorVo.getEndereco());
+            ptst.setInt(6, avaliadorVo.getIdAvaliador());
             ptst.executeUpdate();
         }catch(SQLException erro) {
             erro.printStackTrace();
