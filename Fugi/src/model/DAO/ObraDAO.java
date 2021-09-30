@@ -11,7 +11,7 @@ import java.util.List;
 
 import src.model.VO.ObraVO;
 
-public class ObraDAO extends BaseDAO{
+public class ObraDAO extends BaseDAO implements ObraInterDAO{
     
     public void inserir(ObraVO obraVo) {
 
