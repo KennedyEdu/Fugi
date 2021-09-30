@@ -10,7 +10,7 @@ import java.util.List;
 
 import src.model.VO.AvaliaObraVO;
 
-public class avaliaObraDAO extends BaseDAO{
+public class avaliaObraDAO extends BaseDAO implements avaliaObraInterDAO{
     
     public void inserir(AvaliaObraVO avaliaObraVo) {
 
