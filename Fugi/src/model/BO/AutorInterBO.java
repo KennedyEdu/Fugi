@@ -1,40 +1,15 @@
-import java.sql.ResultSet;
+package src.model.BO;
 
-public class AutorInterBO {
+import java.util.List;
 
-    public void ExcluirAutor(AutorVO avo) throws Exception {
-        try{
-            ResultSet result = AutorDAO.removerById(avo.getIdAutor);
-            if (result.next())
-            {
-            } else{
-                throw new Exception("Autor não existente, não possivel excluir");
-            }
-        } catch (SQLException exc){
-            throw new Exception(exc.getMessage());
-        }
-    }
+import src.model.VO.AutorVO;
 
-    public void EditarAutor(AutorVO avo) throws Exception {
-        try{
-            ResultSet result = AutorDAO.editar(avo);
-            if (result.next())
-            {
-            } else{
-                throw new Exception("Autor não existente, não possivel editar");
-            }
-        } catch (SQLException exc){
-            throw new Exception(exc.getMessage());
-        }
-    }
-   
-    public List<AutorVO> ListarAutores() throws Exception {
-        List<AutorVO>  list = new ArrayList<AutorVO>();
-        try{            
-            list = AutorDAO.listar();
-        } catch (SQLException exc){
-            throw new Exception(exc.getMessage());
-        }
-        return list;
-    }
+public interface AutorInterBO {
+    public void adicionarAutor(AutorVO avo) throws Exception;
+    
+    public void excluirAutor(AutorVO avo) throws Exception;
+
+    public void editarAutor(AutorVO avo) throws Exception;
+
+    public List<AutorVO> listarAutores() throws Exception;
 }
