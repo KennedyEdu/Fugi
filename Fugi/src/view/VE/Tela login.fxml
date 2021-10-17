@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufersa.poo.fugi.controle.FrontControle">
+   <children>
+      <ImageView fitHeight="295.0" fitWidth="230.0" layoutX="195.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20174231.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="277.0" layoutY="78.0" text="Fugi" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="175.0" text="Login" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="207.0" text="Senha" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Loginusuario" layoutX="244.0" layoutY="171.0" prefHeight="25.0" prefWidth="146.0" />
+      <PasswordField fx:id="Loginsenha" layoutX="244.0" layoutY="203.0" prefHeight="25.0" prefWidth="146.0" />
+      <Button layoutX="225.0" layoutY="266.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="62.0" style="-fx-background-color: #4F3A3A;" text="Entrar" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+      <CheckBox graphicTextGap="3.0" layoutX="226.0" layoutY="230.0" mnemonicParsing="false" text="Mantenha-me logado" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="9.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="317.0" layoutY="266.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="62.0" style="-fx-background-color: #4F3A3A;" text="Esqueci a &#10;   senha" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="10.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="46.0" layoutX="277.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20181025.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

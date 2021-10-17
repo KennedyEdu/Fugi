@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufersa.poo.fugi.controle.FrontControle">
+   <children>
+      <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Gerenciador" textFill="#7e7474">
+         <font>
+            <Font name="Book Antiqua" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="55.0" fitWidth="372.0" layoutX="114.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20194937.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Pesquisa" layoutX="137.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" style="-fx-background-color: 000000;" text="Pesquisar">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font></TextField>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20190312.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="23.0" layoutX="122.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20192019.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="465.0" layoutX="63.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20200155.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="263.0" layoutY="152.0" text="Avaliadores:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomeAvali" layoutX="280.0" layoutY="174.0" text="nome" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="EndereçoAvali" layoutX="137.0" layoutY="192.0" text="endereço avaliador" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="431.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Autores" textFill="#7e7474">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Livros" textFill="#7e7474">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <ImageView fx:id="AvaliadoRecusado" fitHeight="49.0" fitWidth="42.0" layoutX="101.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203822.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="79.0" layoutY="192.0" text="Endereço:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="212.0" text="CPF:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="CPFAvali" layoutX="108.0" layoutY="212.0" text="CPF avaliador" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="266.0" layoutY="192.0" text="Aceitos:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="266.0" layoutY="212.0" text="Negados:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="AceitoAvali" layoutX="312.0" layoutY="192.0" text="Aceitos avaliador" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="NegadoAvali" layoutX="321.0" layoutY="212.0" text="Negados avaliador" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="208.0" mnemonicParsing="false" style="-fx-background-color: DFDFDF;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215302.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="470.0" layoutY="180.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="23.0" style="-fx-background-color: DFDFDF;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215320.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="335.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Avaliadores" textFill="#7e7474">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Pane layoutX="90.0" layoutY="100.0" prefHeight="241.0" prefWidth="398.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+         <children>
+            <Label layoutX="184.0" layoutY="127.0" text="CPF:" textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="168.0" layoutY="71.0" text="Endereço:" textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="176.0" layoutY="14.0" text="Nome: " textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NovoCPDAvali" layoutX="66.0" layoutY="145.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoNomeAvali" layoutX="66.0" layoutY="32.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoEndereçoAvali" layoutX="67.0" layoutY="89.0" prefHeight="25.0" prefWidth="265.0" />
+            <Button layoutX="241.0" layoutY="190.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Enviar avali.&#10;" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="66.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button layoutX="494.0" layoutY="108.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="86.0" style="-fx-background-color: #4F3A3A;" text="Novo avali.&#10;&#10;" textAlignment="CENTER" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

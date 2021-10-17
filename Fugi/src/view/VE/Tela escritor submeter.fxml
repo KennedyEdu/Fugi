@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufersa.poo.fugi.controle.FrontControle">
+   <children>
+      <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Escritor" textFill="#7e7474">
+         <font>
+            <Font name="Book Antiqua" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20190312.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="261.0" layoutY="91.0" text="Submeter obra" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="281.0" layoutY="120.0" text="Titulo" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="190.0" text="Genero" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="386.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Obras enviadas" textFill="#7e7474">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button layoutX="486.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Submeter" textFill="#7e7474">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <ImageView fx:id="AvaliadoAceito" fitHeight="49.0" fitWidth="56.0" layoutX="96.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203747.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="AvaliadoRecusado" fitHeight="49.0" fitWidth="42.0" layoutX="101.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203822.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="TituloNovaObra" layoutX="135.0" layoutY="141.0" prefHeight="25.0" prefWidth="342.0" />
+      <TextField fx:id="GeneroNovaObra" layoutX="135.0" layoutY="213.0" prefHeight="25.0" prefWidth="342.0" />
+      <Button layoutX="368.0" layoutY="266.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Enviar livro para&#10;avaliaçao" textAlignment="CENTER" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="135.0" layoutY="266.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: #4F3A3A;" text="Escolher PDF&#10;" textAlignment="CENTER" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
