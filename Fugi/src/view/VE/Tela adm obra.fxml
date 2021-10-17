@@ -168,5 +168,93 @@
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
+      <ImageView fitHeight="88.0" fitWidth="465.0" layoutX="65.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20200155.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="NomeAutor1" layoutX="122.0" layoutY="272.0" text="Nome autor" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomeAvali1" layoutX="280.0" layoutY="254.0" text="Obra" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="272.0" text="Autor:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="295.0" text="Avaliador:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomeAvaliador1" layoutX="145.0" layoutY="295.0" text="Sem avaliador" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="272.0" text="Genero:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="GeneroObra1" layoutX="359.0" layoutY="272.0" text="Genero obra" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="295.0" text="Estado:" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="EstadoObra1" layoutX="360.0" layoutY="295.0" text="Estado obra" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="259.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="23.0" style="-fx-background-color: DFDFDF;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215320.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="474.0" layoutY="287.0" mnemonicParsing="false" style="-fx-background-color: DFDFDF;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+               <image>
+                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215355.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutX="100.0" layoutY="129.0" prefHeight="168.0" prefWidth="398.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+         <children>
+            <Label layoutX="134.0" layoutY="44.0" text="Adicionar avaliador:" textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AdicioAvaliObra" layoutX="67.0" layoutY="62.0" prefHeight="25.0" prefWidth="265.0" />
+            <Button layoutX="252.0" layoutY="133.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Adic. aval.&#10;" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="133.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </Pane>
