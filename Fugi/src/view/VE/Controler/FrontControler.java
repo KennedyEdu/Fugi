@@ -1,4 +1,4 @@
-package src.view.VE.controller;
+package src.view.VE.Controler;
 
 public class FrontControler{
     
