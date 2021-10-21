@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufersa.poo.fugi.controle.FrontControle">
+<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.view.VE.Controler.FrontControler">
    <children>
       <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Escritor" textFill="#7e7474">
          <font>
