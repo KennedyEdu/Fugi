@@ -69,5 +69,6 @@
          <font>
             <Font size="13.0" />
          </font></Button>
+      <ScrollBar layoutX="566.0" layoutY="169.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="14.0" style="-fx-background-image: DEDFDF; -fx-border-color: DEDFDF;" />
    </children>
 </Pane>
