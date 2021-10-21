@@ -77,5 +77,6 @@
             <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203822.png" />
          </image>
       </ImageView>
+      <ScrollBar layoutX="566.0" layoutY="169.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="14.0" style="-fx-background-image: DEDFDF; -fx-border-color: DEDFDF;" />
    </children>
 </Pane>
