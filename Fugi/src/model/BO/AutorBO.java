@@ -1,36 +1,40 @@
-package src.model.BO;
+package model.BO;
 
 import java.util.List;
 
-import src.model.DAO.AutorDAO;
-import src.model.VO.AutorVO;
+import model.DAO.AutorDAO;
+import model.VO.AutorVO;
 
 public class AutorBO extends AutorDAO implements AutorInterBO {
 
+	@Override
     public void adicionarAutor(AutorVO avo) throws Exception{
         try{
             inserir(avo);
         }catch(Exception exc){
-            throw new Exception("Os unicos valores que podem ser nulos s√£o o ID e o Nivel.");
+            throw new Exception("Os unicos valores que podem ser nulos s„o o ID e o Nivel.");
         }
     }
 
+	@Override
     public void excluirAutor(AutorVO avo) throws Exception {
         try{
             removerById(avo);
         } catch(Exception exc){
-            throw new Exception("O Id do Autor n√£o est√° no banco de dados");
+            throw new Exception("O Id do Autor n„o est· no banco de dados");
         }
     }
 
+	@Override
     public void editarAutor(AutorVO avo) throws Exception {
         try{
             editar(avo);
         } catch (Exception exc){
-            throw new Exception("N√£o pode existir valor nulo");
+            throw new Exception("N„o pode existir valor nulo");
         }
     }
    
+	@Override
     public List<AutorVO> listarAutores() throws Exception {
         
         try{            

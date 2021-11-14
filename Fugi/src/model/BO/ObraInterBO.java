@@ -1,15 +1,15 @@
-package src.model.BO;
+package model.BO;
 
 import java.util.List;
 
-import src.model.VO.ObraVO;
+import model.VO.ObraVO;
 
 public interface ObraInterBO {
-    public void adicionarObra(ObraVO ovo) throws Exception;
+    public abstract void adicionarObra(ObraVO ovo) throws Exception;
 
-    public void excluirObra(ObraVO ovo) throws Exception;
+    public abstract void excluirObra(ObraVO ovo) throws Exception;
 
-    public void editarObra(ObraVO ovo) throws Exception;
+    public abstract void editarObra(ObraVO ovo) throws Exception;
 
-    public List<ObraVO> listarObras() throws Exception;
+    public abstract List<ObraVO> listarObras() throws Exception;
 }

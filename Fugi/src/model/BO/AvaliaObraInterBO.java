@@ -1,15 +1,15 @@
-package src.model.BO;
+package model.BO;
 
 import java.util.List;
 
-import src.model.VO.AvaliaObraVO;
+import model.VO.AvaliaObraVO;
 
 public interface AvaliaObraInterBO {
-    public void adicionarAvaliacao(AvaliaObraVO ovo) throws Exception;
+    public abstract void adicionarAvaliacao(AvaliaObraVO ovo) throws Exception;
 
-    public void excluirAvaliacao(AvaliaObraVO ovo) throws Exception;
+    public abstract void excluirAvaliacao(AvaliaObraVO ovo) throws Exception;
 
-    public void editarAvaliacao(AvaliaObraVO ovo) throws Exception;
+    public abstract void editarAvaliacao(AvaliaObraVO ovo) throws Exception;
 
-    public List<AvaliaObraVO> listarAvaliacoes() throws Exception;
+    public abstract List<AvaliaObraVO> listarAvaliacoes() throws Exception;
 }

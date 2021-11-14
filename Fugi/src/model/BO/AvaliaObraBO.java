@@ -1,37 +1,41 @@
-package src.model.BO;
+package model.BO;
 
 import java.util.List;
 
-import src.model.DAO.avaliaObraDAO;
+import model.DAO.AvaliaObraDAO;
 
-import src.model.VO.AvaliaObraVO;
+import model.VO.AvaliaObraVO;
 
-public class AvaliaObraBO extends avaliaObraDAO implements AvaliaObraInterBO{
+public class AvaliaObraBO extends AvaliaObraDAO implements AvaliaObraInterBO{
 
+    @Override
     public void adicionarAvaliacao(AvaliaObraVO ovo) throws Exception{
         try{
             inserir(ovo);
         }catch(Exception exc){
-            throw new Exception("O unico valor que pode ser nulo √© o ID.");
+            throw new Exception("O unico valor que pode ser nulo È o ID.");
         }
     }
 
+    @Override
     public void excluirAvaliacao(AvaliaObraVO ovo) throws Exception {
         try{
             removerById(ovo);
         } catch(Exception exc){
-            throw new Exception("O Id da Avalia√ß√£o n√£o est√° no banco de dados");
+            throw new Exception("O Id da AvaliaÁ„o n„o est· no banco de dados");
         }
     }
 
+    @Override
     public void editarAvaliacao(AvaliaObraVO ovo) throws Exception {
         try{
             editar(ovo);
         } catch (Exception exc){
-            throw new Exception("N√£o pode existir valor nulo");
+            throw new Exception("N„o pode existir valor nulo");
         }
     }
    
+    @Override
     public List<AvaliaObraVO> listarAvaliacoes() throws Exception {
         try{            
             List<AvaliaObraVO>  list = listar();

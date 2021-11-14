@@ -1,15 +1,15 @@
-package src.model.BO;
+package model.BO;
 
 import java.util.List;
 
-import src.model.VO.AvaliadorVO;
+import model.VO.AvaliadorVO;
 
 public interface AvaliadorInterBO {
-    public void adicionarAvaliador(AvaliadorVO alvo) throws Exception;
+    public abstract void adicionarAvaliador(AvaliadorVO alvo) throws Exception;
     
-    public void excluirAvaliador(AvaliadorVO alvo) throws Exception;
+    public abstract void excluirAvaliador(AvaliadorVO alvo) throws Exception;
 
-    public void editarAvaliador(AvaliadorVO alvo) throws Exception;
+    public abstract void editarAvaliador(AvaliadorVO alvo) throws Exception;
 
-    public List<AvaliadorVO> listarAvaliadores() throws Exception;
+    public abstract List<AvaliadorVO> listarAvaliadores() throws Exception;
 }
