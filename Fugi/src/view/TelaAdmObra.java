@@ -1,4 +1,5 @@
-package src.view;
+package view;
+
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,15 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TelaAdmObra extends Applicartion {
-
-    public static void main (String[] args) {
-        launch();
-    }
+public class TelaAdmObra extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        parent root = FXMLLoader.load(getClass().getResoucer("VE/TelaAdmObra.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("VE/TelaAdmObra.fxml"));
 
         Scene cena = new Scene(root);
 

@@ -1,4 +1,4 @@
-package src.view;
+package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,15 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TelaEscritorAval {
-    
-    public static void main (String[] args) {
-        launch();
-    }
+public class TelaEscritorAval extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        parent root = FXMLLoader.load(getClass().getResoucer("VE/TelaEscritorAvaliaÃ§Ã£o.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("VE/TelaEscritorAvaliação.fxml"));
 
         Scene cena = new Scene(root);
 
