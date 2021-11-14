@@ -1,8 +1,8 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.util.List;
 
-import src.model.VO.AvaliadorVO;
+import model.VO.AvaliadorVO;
 
 public interface AvaliadorInterDAO {
     public void removerById(AvaliadorVO avaliadorvo);

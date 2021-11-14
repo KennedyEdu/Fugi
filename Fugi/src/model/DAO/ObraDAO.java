@@ -1,4 +1,4 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import src.model.VO.ObraVO;
+import model.VO.ObraVO;
 
 public class ObraDAO extends BaseDAO implements ObraInterDAO{
     

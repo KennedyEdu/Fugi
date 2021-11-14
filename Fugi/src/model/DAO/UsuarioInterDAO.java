@@ -1,6 +1,7 @@
-package src.model.DAO;
-import src.model.VO.UsuarioVO;
+package model.DAO;
+
+import model.VO.Usuario;
 
 public interface UsuarioInterDAO{
-    public void inserir(UsuarioVO usuario);
+    public void inserir(Usuario usuario);
 }

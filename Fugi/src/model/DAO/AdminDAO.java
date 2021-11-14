@@ -1,4 +1,4 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,12 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import src.model.VO.AdminVO;
-import src.model.VO.UsuarioVO;
+import model.VO.AdminVO;
+import model.VO.Usuario;
 
 public class AdminDAO extends BaseDAO implements UsuarioInterDAO, AdminInterDAO{
     
-    public void inserir(UsuarioVO usuario) {
+    public void inserir(Usuario usuario) {
 
         conectar = getConnection();
         String sql = "insert into admin (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";

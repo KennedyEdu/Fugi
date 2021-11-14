@@ -1,4 +1,4 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,12 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import src.model.VO.AvaliadorVO;
-import src.model.VO.UsuarioVO;
+import model.VO.AvaliadorVO;
+import model.VO.Usuario;
 
 public class AvaliadorDAO extends BaseDAO implements UsuarioInterDAO, AvaliadorInterDAO{
     
-    public void inserir(UsuarioVO usuario) {
+    public void inserir(Usuario usuario) {
 
         conectar = getConnection();
         String sql = "insert into avaliador (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";

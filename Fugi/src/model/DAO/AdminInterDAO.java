@@ -1,8 +1,8 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.util.List;
 
-import src.model.VO.AdminVO;
+import model.VO.AdminVO;
 
 public interface AdminInterDAO {
     public void removerById(AdminVO adminvo);

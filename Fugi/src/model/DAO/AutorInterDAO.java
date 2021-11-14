@@ -1,8 +1,8 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.util.List;
 
-import src.model.VO.AutorVO;
+import model.VO.AutorVO;
 
 public interface AutorInterDAO {
     public void removerById(AutorVO autorvo);

@@ -1,8 +1,8 @@
-package src.model.DAO;
+package model.DAO;
 
 import java.util.List;
 
-import src.model.VO.ObraVO;
+import model.VO.ObraVO;
 
 public interface ObraInterDAO {
     public void inserir(ObraVO obraVo);
