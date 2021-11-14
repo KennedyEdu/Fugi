@@ -1,4 +1,5 @@
-package src.model.VO;
+package model.VO;
+
 
 public class AvaliaObraVO {
     private int idAvalia;

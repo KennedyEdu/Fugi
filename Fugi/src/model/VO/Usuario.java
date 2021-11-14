@@ -1,4 +1,4 @@
-package src.model.VO;
+package model.VO;
 
 public abstract class Usuario {
     private String nome;

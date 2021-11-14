@@ -1,4 +1,4 @@
-package src.model.VO;
+package model.VO;
 
 public class AutorVO extends Usuario {
 
