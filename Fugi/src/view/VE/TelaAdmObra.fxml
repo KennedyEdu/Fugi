@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.view.VE.Controler.FrontControler">
+<Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VE.Controler.FrontControler">
    <children>
       <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Gerenciador" textFill="#7e7474">
          <font>
@@ -17,7 +17,7 @@
       </Label>
       <ImageView fitHeight="55.0" fitWidth="372.0" layoutX="114.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20194937.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20194937.png" />
          </image>
       </ImageView>
       <TextField fx:id="Pesquisa" layoutX="137.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" style="-fx-background-color: 000000;" text="Pesquisar">
@@ -26,17 +26,17 @@
          </font></TextField>
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20190312.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20190312.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="32.0" fitWidth="23.0" layoutX="122.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20192019.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20192019.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="88.0" fitWidth="465.0" layoutX="63.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20200155.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20200155.png" />
          </image>
       </ImageView>
       <Label layoutX="263.0" layoutY="152.0" text="Avaliadores:" textFill="#4f3a3a">
@@ -62,11 +62,6 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <ImageView fx:id="AvaliadoRecusado" fitHeight="49.0" fitWidth="42.0" layoutX="101.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203822.png" />
-         </image>
-      </ImageView>
       <Label layoutX="79.0" layoutY="192.0" text="Autor:" textFill="#4f3a3a">
          <font>
             <Font name="Book Antiqua" size="13.0" />
@@ -106,7 +101,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215302.png" />
+                  <Image url="@fotos/Captura%20de%20tela%202021-10-16%20215302.png" />
                </image>
             </ImageView>
          </graphic>
@@ -115,7 +110,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215320.png" />
+                  <Image url="@fotos/Captura%20de%20tela%202021-10-16%20215320.png" />
                </image>
             </ImageView>
          </graphic>
@@ -170,7 +165,7 @@
       </Button>
       <ImageView fitHeight="88.0" fitWidth="465.0" layoutX="65.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20200155.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20200155.png" />
          </image>
       </ImageView>
       <Label fx:id="NomeAutor1" layoutX="122.0" layoutY="272.0" text="Nome autor" textFill="#4f3a3a">
@@ -222,7 +217,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215320.png" />
+                  <Image url="@fotos/Captura%20de%20tela%202021-10-16%20215320.png" />
                </image>
             </ImageView>
          </graphic>
@@ -231,7 +226,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
                <image>
-                  <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20215355.png" />
+                  <Image url="@fotos/Captura%20de%20tela%202021-10-16%20215355.png" />
                </image>
             </ImageView>
          </graphic>

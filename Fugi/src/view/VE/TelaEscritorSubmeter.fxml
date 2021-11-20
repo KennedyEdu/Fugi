@@ -17,7 +17,7 @@
       </Label>
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20190312.png" />
+            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20190312.png" />
          </image>
       </ImageView>
       <Label layoutX="261.0" layoutY="91.0" text="Submeter obra" textFill="#4f3a3a">
@@ -43,24 +43,9 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <ImageView fx:id="AvaliadoAceito" fitHeight="49.0" fitWidth="56.0" layoutX="96.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203747.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="AvaliadoRecusado" fitHeight="49.0" fitWidth="42.0" layoutX="101.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../../Desktop/Ufersa/POO/telas%20prints/Captura%20de%20tela%202021-10-16%20203822.png" />
-         </image>
-      </ImageView>
       <TextField fx:id="TituloNovaObra" layoutX="135.0" layoutY="141.0" prefHeight="25.0" prefWidth="342.0" />
       <TextField fx:id="GeneroNovaObra" layoutX="135.0" layoutY="213.0" prefHeight="25.0" prefWidth="342.0" />
-      <Button layoutX="368.0" layoutY="266.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Enviar livro para&#10;avaliaçao" textAlignment="CENTER" textFill="#dedfdf">
-         <font>
-            <Font name="Book Antiqua" size="13.0" />
-         </font>
-      </Button>
-      <Button layoutX="135.0" layoutY="266.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: #4F3A3A;" text="Escolher PDF&#10;" textAlignment="CENTER" textFill="#dedfdf">
+      <Button layoutX="248.0" layoutY="265.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Enviar livro para&#10;avaliaçao" textAlignment="CENTER" textFill="#dedfdf">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
