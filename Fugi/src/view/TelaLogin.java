@@ -14,7 +14,7 @@ public class TelaLogin extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Tela Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("VE/TelaLogin.fxml"));
 
         Scene cena = new Scene(root);
 
