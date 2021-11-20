@@ -6,24 +6,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import model.VO.ObraVO;
 
-public class ObraDAO extends BaseDAO implements ObraInterDAO{
+public class ObraDAO extends BaseDAO<ObraVO>{
     
     public void inserir(ObraVO obraVo) {
 
         conectar = getConnection();
-        String sql = "insert into obra (titulo,genero,ano,autor) values (?, ?, ?, ?)";
+        String sql = "insert into obra (titulo,genero,ano, id_obra_autor, estado) values (?, ?, ?, ?, ?)";
         PreparedStatement ptst;
         try{
             ptst = conectar.prepareStatement(sql);
             ptst.setString(1, obraVo.getTitulo());
             ptst.setString(2, obraVo.getGenero());
             ptst.setDate(3, (Date) obraVo.getAno());
-            ptst.setInt(4, obraVo.getAutor().getIdAutor());
+            ptst.setLong(4, obraVo.getAutor().getIdAutor());
+            ptst.setString(5, obraVo.getEstado());
 
             ptst.execute();
         }catch(SQLException erro) {
@@ -31,58 +30,50 @@ public class ObraDAO extends BaseDAO implements ObraInterDAO{
         }
     }
 
-    public void removerById(ObraVO obraVo) {
-        conectar = getConnection();
-        String sql = "delete from obra where id_obra = ?";
-        PreparedStatement ptst;
-        try{
-            ptst = conectar.prepareStatement(sql);
-            ptst.setInt(1, obraVo.getIdObra());
-            ptst.executeUpdate();
-        }catch(SQLException erro) {
-            erro.printStackTrace();
-        }
-    }
 
-    public void editar(ObraVO obraVo) {
-        conectar = getConnection();
-        String sql = "UPDATE obra SET (titulo,genero,ano,autor) = (?, ?, ?, ?) WHERE id_obra= ?";
-        PreparedStatement ptst;
-        try { 
-            ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, obraVo.getTitulo());
-            ptst.setString(2, obraVo.getGenero());
-            ptst.setDate(3, (Date) obraVo.getAno());
-            ptst.setInt(4, obraVo.getAutor().getIdAutor());
-            ptst.executeUpdate();
-        }catch(SQLException erro) {
-            erro.printStackTrace();
-        }
-    }
-
-    public List<ObraVO> listar() {
-        conectar = getConnection();
-        String sql = "select titulo, genero, ano from obra";
+	@Override
+	public ResultSet listar() throws SQLException {
+	    conectar = getConnection();
+        String sql = "select * from obra";
     
         Statement st;
         ResultSet rs;
     
-        List<ObraVO> obras = new ArrayList<ObraVO>();
-    
-        try {
-            st = conectar.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next()){
-                ObraVO vo = new ObraVO();
-                vo.setTitulo(rs.getString("titulo"));
-                vo.setGenero(rs.getString("genero"));
-                vo.setAno(rs.getDate("ano"));
-                
-                obras.add(vo); 
-            }
+        st = conectar.createStatement();
+        rs = st.executeQuery(sql);
+        return rs;
+	}
+
+	@Override
+	public void atualizar(ObraVO entity) throws SQLException {
+        conectar = getConnection();
+        String sql = "UPDATE obra SET  (titulo,genero,ano, id_obra_autor, estado) = (?, ?, ?, ?, ?) WHERE id_obra= ?";
+        PreparedStatement ptst;
+        try { 
+            ptst = conectar.prepareStatement(sql);
+            ptst.setString(1, entity.getTitulo());
+            ptst.setString(2, entity.getGenero());
+            ptst.setDate(3, (Date) entity.getAno());
+            ptst.setLong(4, entity.getAutor().getIdAutor());
+            ptst.setString(5, entity.getEstado());
+            ptst.executeUpdate();
         }catch(SQLException erro) {
             erro.printStackTrace();
         }
-        return obras;
-    }
+		
+	}
+
+	@Override
+	public void deletar(ObraVO entity) throws SQLException {
+    	conectar = getConnection();
+        String sql = "delete from obra where id_obra= ?";
+        PreparedStatement ptst;
+        try{
+            ptst = conectar.prepareStatement(sql);
+            ptst.setLong(1, entity.getIdObra());
+            ptst.executeUpdate();
+        }catch(SQLException erro) {
+            erro.printStackTrace();
+        }
+	}
 } 

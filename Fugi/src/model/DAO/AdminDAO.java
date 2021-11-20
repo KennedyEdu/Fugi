@@ -5,92 +5,59 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.VO.AdminVO;
-import model.VO.Usuario;
 
-public class AdminDAO extends BaseDAO implements UsuarioInterDAO, AdminInterDAO{
+import model.VO.UsuarioVO;
+
+public class AdminDAO extends UsuarioDAO<AdminVO>{
     
-    public void inserir(Usuario usuario) {
-
+	@Override
+    public void inserir(AdminVO VO) throws SQLException{
+		super.inserir(VO);
         conectar = getConnection();
-        String sql = "insert into admin (nome,cpf,email,senha,nivel,endereco) values (?, ?, ?, ?, ?, ?)";
-        PreparedStatement ptst;
-        try{
-            ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, usuario.getNome());
-            ptst.setString(2, usuario.getCPF());
-            ptst.setString(3, usuario.getEmail());
-            ptst.setString(4, usuario.getSenha());
-            ptst.setInt(5, usuario.getNivel());
-            ptst.setString(6, usuario.getEndereco());
-
-            ptst.execute();
-        }catch(SQLException erro) {
-            erro.printStackTrace();
-        }
+        String sql = "insert into admin (id_admin_usuario) values (?)";
+       
+        UsuarioVO uservo = new UsuarioVO();
+        UsuarioDAO<UsuarioVO> dao = new UsuarioDAO<UsuarioVO>();
+		ResultSet rs = dao.listar();
+        try{            
+        	while(rs.next()){
+    		   
+                uservo.setIdUsuario(rs.getLong("id"));
+        	}
+        	  PreparedStatement ptst;
+              ptst = conectar.prepareStatement(sql);
+              ptst.setLong(1, uservo.getIdUsuario());
+              ptst.execute();
+            } catch(SQLException erro) {
+	            erro.printStackTrace();
+	        }
+		
     }
 
-    public void removerById(AdminVO adminvo) {
-        conectar = getConnection();
+    public void removerById(AdminVO adminvo) throws SQLException{
+    	conectar = getConnection();
         String sql = "delete from admin where id_admin = ?";
         PreparedStatement ptst;
-        try{
-            ptst = conectar.prepareStatement(sql);
-            ptst.setInt(1, adminvo.getIdAdm());
-            ptst.executeUpdate();
-        }catch(SQLException erro) {
-            erro.printStackTrace();
-        }
+        ptst = conectar.prepareStatement(sql);
+        ptst.setLong(1, adminvo.getIdAdm());
+        ptst.executeUpdate();
+        super.deletar(adminvo);
     }
 
-    public void editar(AdminVO adminVo) {
-        conectar = getConnection();
-        String sql = "UPDATE admin SET (nome, cpf, email, senha, endereco) = ( ?, ?, ?, ?, ?) WHERE id_admin= ?";
-        PreparedStatement ptst;
-        try { 
-            ptst = conectar.prepareStatement(sql);
-            ptst.setString(1, adminVo.getNome());
-            ptst.setString(2, adminVo.getCPF());
-            ptst.setString(3, adminVo.getEmail());
-            ptst.setString(4, adminVo.getSenha());
-            ptst.setString(5, adminVo.getEndereco());
-            ptst.setInt(6, adminVo.getIdAdm());
-            ptst.executeUpdate();
-        }catch(SQLException erro) {
-            erro.printStackTrace();
-        }
+    public void editar(AdminVO adminVo)throws SQLException {
+     super.atualizar(adminVo);
     }
 
-    public List<AdminVO> listar() {
+    public ResultSet listar() throws SQLException{
         conectar = getConnection();
-        String sql = "select * from admin";
+        String sql = "select * from admin left join usuario on autor.id_admin_usuario = usuario.usuario.id";
     
         Statement st;
         ResultSet rs;
     
-        List<AdminVO> admins = new ArrayList<AdminVO>();
-    
-        try {
-            st = conectar.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next()){
-                AdminVO vo = new AdminVO();
-                vo.setIdAdm(rs.getInt("id_admin"));
-                vo.setNome(rs.getString("nome"));
-                vo.setCPF(rs.getString("cpf"));
-                vo.setEmail(rs.getString("email"));
-                vo.setSenha(rs.getString("senha"));
-                vo.setNivel(rs.getInt("nivel"));
-                vo.setEndereco(rs.getString("endereco"));
-                
-                admins.add(vo);
-            }
-        }catch(SQLException erro) {
-            erro.printStackTrace();
+        st = conectar.createStatement();
+        rs = st.executeQuery(sql);
+        return rs;
         }
-        return admins;
-    }
 }
