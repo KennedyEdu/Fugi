@@ -4,19 +4,19 @@ package model.VO;
 import java.util.Date;
 
 public class ObraVO {
-    private int idObra;
+    private Long idObra;
     private String titulo;
     private String genero;
     private Date ano;
     private AutorVO autor;
     private String estado;
 
-    public void setIdObra(int idObra){
+    public void setIdObra(Long idObra){
         if(idObra >= 0) 
             this.idObra = idObra; 
     }
 
-    public int getIdObra(){
+    public Long getIdObra(){
         return this.idObra;
     }
 
@@ -64,4 +64,8 @@ public class ObraVO {
     public String getEstado(){
         return this.estado; 
     }
+
+	public void setIdAutor(long long1) {
+		autor.setIdAutor(long1);
+	}
 }

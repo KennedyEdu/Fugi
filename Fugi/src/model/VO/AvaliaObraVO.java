@@ -2,7 +2,7 @@ package model.VO;
 
 
 public class AvaliaObraVO {
-    private int idAvalia;
+    private Long idAvalia;
     private ObraVO obra;
     private AutorVO autor;
     private AvaliadorVO avaliador;
@@ -35,12 +35,12 @@ public class AvaliaObraVO {
         return this.avaliador;
     }
  
-    public void setIdAvalia(int idAvalia){
+    public void setIdAvalia(Long idAvalia){
         if(idAvalia >= 0)
             this.idAvalia = idAvalia;
     }
 
-    public int getIdAvalia(){
+    public Long getIdAvalia(){
         return this.idAvalia;
     }
 
@@ -52,4 +52,14 @@ public class AvaliaObraVO {
     public String getEstado(){
         return this.estado;
     }
+
+	public void setIdAutor(long long1) {
+		autor.setIdAutor(long1);
+	}
+	public void setIdObra(long long2) {
+		obra.setIdObra(long2);
+	}
+	public void setIdAvaliador(long long3) {
+		avaliador.setIdAvaliador(long3);
+	}
 }

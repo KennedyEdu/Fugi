@@ -1,15 +1,15 @@
 package model.VO;
 
-public class AutorVO extends Usuario {
+public class AutorVO extends UsuarioVO {
 
-    private int idAutor;
+    private long idAutor;
 
-    public void setIdAutor(int idAutor){
+    public void setIdAutor(Long idAutor){
         if(idAutor >= 0)
             this.idAutor = idAutor;
     }
 
-    public int getIdAutor(){
+    public long getIdAutor(){
         return this.idAutor;
     } 
 }

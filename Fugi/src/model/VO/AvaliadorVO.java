@@ -1,14 +1,14 @@
 package model.VO;
 
-public class AvaliadorVO extends Usuario {
-    private int idAvaliador;
+public class AvaliadorVO extends UsuarioVO {
+    private long idAvaliador;
 
-    public void setIdAvaliador(int idAvaliador){
+    public void setIdAvaliador(Long idAvaliador){
         if(idAvaliador >= 0)
             this.idAvaliador = idAvaliador;
     }
 
-    public int getIdAvaliador(){
+    public long getIdAvaliador(){
         return this.idAvaliador;
     }
 }

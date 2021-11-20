@@ -1,15 +1,15 @@
 package model.VO;
 
-public class AdminVO extends Usuario{
+public class AdminVO extends UsuarioVO{
 
-    private int idAdm;
+    private long idAdm;
 
-    public void setIdAdm(int idAdm){
-        if(idAdm >= 0)
-            this.idAdm = idAdm;
+    public void setIdAdm(long l){
+        if(l >= 0)
+            this.idAdm = l;
     }
 
-    public int getIdAdm(){
+    public long getIdAdm(){
         return this.idAdm;
     } 
 }
