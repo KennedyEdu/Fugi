@@ -1,5 +1,7 @@
 package model.BO;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.AutorDAO;
@@ -36,10 +38,24 @@ public class AutorBO extends AutorDAO implements AutorInterBO {
    
 	@Override
     public List<AutorVO> listarAutores() throws Exception {
-        
+		List<AutorVO> autors = new ArrayList<AutorVO>();
+        AutorDAO dao = new AutorDAO();
+		ResultSet rs = dao.listar();
         try{            
-            List<AutorVO>  list = listar();
-            return list;
+        	while(rs.next()){
+                AutorVO vo = new AutorVO();
+                vo.setNome(rs.getString("nome"));
+                vo.setCPF(rs.getString("cpf"));
+                vo.setEmail(rs.getString("email"));
+                vo.setSenha(rs.getString("senha"));
+                vo.setNivel(rs.getInt("nivel"));
+                vo.setEndereco(rs.getString("endereco"));
+                vo.setIdAutor(rs.getLong("id_autor"));
+                vo.setIdUsuario(rs.getLong("id_autor_usuario"));
+                
+                autors.add(vo);
+        	}
+            return autors;
 
         } catch (Exception exc){
             throw new Exception("Banco de dados vazio");

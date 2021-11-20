@@ -1,9 +1,12 @@
 package model.BO;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.AdminDAO;
 import model.VO.AdminVO;
+
 
 public class AdminBO extends AdminDAO implements AdminInterBO {
 
@@ -36,14 +39,26 @@ public class AdminBO extends AdminDAO implements AdminInterBO {
    
 	@Override
     public List<AdminVO> listarAdmins() throws Exception {
-        
+		List<AdminVO> admin = new ArrayList<AdminVO>();
+        AdminDAO dao = new AdminDAO();
+		ResultSet rs = dao.listar();
         try{            
-            List<AdminVO>  list = listar();
-            return list;
+        	while(rs.next()){
+                AdminVO vo = new AdminVO();
+                vo.setNome(rs.getString("nome"));
+                vo.setCPF(rs.getString("cpf"));
+                vo.setEmail(rs.getString("email"));
+                vo.setSenha(rs.getString("senha"));
+                vo.setNivel(rs.getInt("nivel"));
+                vo.setEndereco(rs.getString("endereco"));
+                vo.setIdAdm(rs.getLong("id_adm"));
+                vo.setIdUsuario(rs.getLong("id_adm_usuario"));
+                admin.add(vo);
+        	}
+            return admin;
 
         } catch (Exception exc){
             throw new Exception("Banco de dados vazio");
-        }
-        
+        }        
     }
 }

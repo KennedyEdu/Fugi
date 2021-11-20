@@ -1,5 +1,7 @@
 package model.BO;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.AvaliadorDAO;
@@ -38,13 +40,28 @@ public class AvaliadorBO extends AvaliadorDAO implements AvaliadorInterBO {
 	@Override
     public List<AvaliadorVO> listarAvaliadores() throws Exception {
         
+		List<AvaliadorVO> avaliadores = new ArrayList<AvaliadorVO>();
+        AvaliadorDAO dao = new AvaliadorDAO();
+		ResultSet rs = dao.listar();
         try{            
-            List<AvaliadorVO>  list = listar();
-            return list;
+        	while(rs.next()){
+                AvaliadorVO vo = new AvaliadorVO();
+                vo.setNome(rs.getString("nome"));
+                vo.setCPF(rs.getString("cpf"));
+                vo.setEmail(rs.getString("email"));
+                vo.setSenha(rs.getString("senha"));
+                vo.setNivel(rs.getInt("nivel"));
+                vo.setEndereco(rs.getString("endereco"));
+                vo.setIdAvaliador(rs.getLong("id_avaliador"));
+                vo.setIdUsuario(rs.getLong("id_avaliador_usuario"));
+                
+                avaliadores.add(vo);
+        	}
+            return avaliadores;
 
         } catch (Exception exc){
             throw new Exception("Banco de dados vazio");
+    
         }
-        
-    }
+	}	
 }

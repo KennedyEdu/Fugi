@@ -1,9 +1,9 @@
 package model.BO;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
-
 import model.DAO.ObraDAO;
-
 import model.VO.ObraVO;
 
 public class ObraBO extends ObraDAO implements ObraInterBO {
@@ -20,7 +20,7 @@ public class ObraBO extends ObraDAO implements ObraInterBO {
 	@Override
     public void excluirObra(ObraVO ovo) throws Exception {
         try{
-            removerById(ovo);
+            deletar(ovo);
         } catch(Exception exc){
             throw new Exception("O Id da Obra não está no banco de dados");
         }
@@ -29,7 +29,7 @@ public class ObraBO extends ObraDAO implements ObraInterBO {
 	@Override
     public void editarObra(ObraVO ovo) throws Exception {
         try{
-            editar(ovo);
+            atualizar(ovo);
         } catch (Exception exc){
             throw new Exception("Não pode existir valor nulo");
         }
@@ -37,13 +37,27 @@ public class ObraBO extends ObraDAO implements ObraInterBO {
    
 	@Override
     public List<ObraVO> listarObras() throws Exception {
-        try{            
-            List<ObraVO>  list = listar();
-            return list;
-
-        } catch (Exception exc){
-            throw new Exception("Banco de dados vazio");
-        }
-        
-    }
+		 
+			List<ObraVO> obras = new ArrayList<ObraVO>();
+	        ObraDAO dao = new ObraDAO();
+			ResultSet rs = dao.listar();
+	        try{            
+	        	while(rs.next()){
+	                ObraVO vo = new ObraVO();
+	                vo.setTitulo(rs.getString("titulo"));
+	                vo.setGenero(rs.getString("genero"));
+	                vo.setAno(rs.getDate("ano"));
+	                vo.setEstado(rs.getString("estado"));
+	                vo.setIdObra(rs.getLong("id_obra"));
+	                vo.setIdAutor(rs.getLong("id_obra_autor"));
+	                
+	                obras.add(vo);
+	        	}
+	            return obras;
+	        } catch (Exception exc){
+	            throw new Exception("Banco de dados vazio");		    
+		        
+	        }
+			
+	}	
 }
