@@ -10,78 +10,99 @@
 
 <Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VE.Controler.FrontControler">
    <children>
+      <Label fx:id="errocaixa" layoutX="207.0" layoutY="81.0" text="Erro: Marque ao menos uma caixa!" textFill="#f54747" visible="false">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Label>
       <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Escritor" textFill="#7e7474">
          <font>
             <Font name="Book Antiqua" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="55.0" fitWidth="372.0" layoutX="114.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="372.0" layoutX="133.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@fotos/Captura%20de%20tela%202021-10-16%20194937.png" />
          </image>
       </ImageView>
-      <TextField fx:id="Pesquisa" layoutX="137.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" style="-fx-background-color: 000000;" text="Pesquisar">
+      <TextField fx:id="Pesquisa" layoutX="144.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" promptText="Pesquisa" style="-fx-background-color: 000000;">
          <font>
             <Font name="Book Antiqua" size="12.0" />
-         </font></TextField>
+         </font>
+      </TextField>
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@fotos/Captura%20de%20tela%202021-10-16%20190312.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="23.0" layoutX="122.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20192019.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="81.0" fitWidth="449.0" layoutX="76.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20200155.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="259.0" layoutY="147.0" text="Obras enviadas" textFill="#4f3a3a">
-         <font>
-            <Font name="Book Antiqua" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="titulo" layoutX="276.0" layoutY="177.0" text="Titulo" textFill="#4f3a3a">
-         <font>
-            <Font name="Book Antiqua" size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="genero" layoutX="279.0" layoutY="207.0" text="Genero" textFill="#4f3a3a">
+      <Label layoutX="281.0" layoutY="149.0" text="Obras:" textFill="#4f3a3a">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Label>
-      <ImageView fitHeight="74.0" fitWidth="42.0" layoutX="465.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20194608.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="386.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Obras enviadas" textFill="#7e7474">
+      <Button layoutX="248.0" layoutY="374.0" mnemonicParsing="false" onAction="#Clicked1" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #4F3A3A;" text="Submeter" textAlignment="CENTER" textFill="#dedfdf">
          <font>
-            <Font size="13.0" />
-         </font></Button>
-      <Button layoutX="486.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Submeter" textFill="#7e7474">
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="statusbox" layoutX="14.0" layoutY="125.0" mnemonicParsing="false" onAction="#Statustrue" text="Status" textFill="#4f3a3a">
          <font>
-            <Font size="13.0" />
-         </font></Button>
-      <ImageView fx:id="AvaliadoAceito" fitHeight="49.0" fitWidth="56.0" layoutX="96.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20203747.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="AvaliadoRecusado" fitHeight="49.0" fitWidth="42.0" layoutX="101.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20203822.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="AvaliadoEspera" fitHeight="44.0" fitWidth="37.0" layoutX="106.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fotos/Captura%20de%20tela%202021-10-16%20205731.png" />
-         </image></ImageView>
-      <ScrollBar layoutX="566.0" layoutY="169.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="14.0" style="-fx-background-image: DEDFDF; -fx-border-color: DEDFDF;" />
-      <FlowPane prefHeight="200.0" prefWidth="200.0" />
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="databox" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#Datatrue" text="Data" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="titulobox" layoutX="77.0" layoutY="113.0" mnemonicParsing="false" onAction="#Titulotrue" selected="true" text="Titulo" textFill="#4f3a3a">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="466.0" layoutY="110.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="21.0" prefWidth="16.0" style="-fx-background-color: #cecfcf;">
+         <graphic>
+            <ImageView fitHeight="14.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fotos/Captura%20de%20tela%202021-10-16%20192019.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="ObrasListBasic" layoutX="104.0" layoutY="174.0" prefHeight="200.0" prefWidth="398.0">
+         <columns>
+            <TableColumn fx:id="Titulocl" editable="false" prefWidth="109.0" text="Titulo:" />
+            <TableColumn fx:id="Generocl" editable="false" prefWidth="67.0" text="Genero:" />
+            <TableColumn fx:id="Datacl" editable="false" prefWidth="76.0" text="Data:" />
+            <TableColumn fx:id="Statuscl" editable="false" prefWidth="74.0" text="Status:" />
+            <TableColumn fx:id="IdObracl" editable="false" prefWidth="73.0" text="Id:" />
+         </columns>
+      </TableView>
+      <Pane fx:id="Tela1" layoutX="77.0" layoutY="102.0" prefHeight="155.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+         <children>
+            <Button layoutX="355.0" layoutY="114.0" mnemonicParsing="false" onAction="#EnviarNovoObra" style="-fx-background-color: #4F3A3A;" text="Submeter" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="CancelarAutor2" layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#Cancel1" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="202.0" layoutY="5.0" text="Nome:" textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NomeObra" layoutX="90.0" layoutY="23.0" prefHeight="25.0" prefWidth="265.0" />
+            <Label layoutX="198.0" layoutY="60.0" text="Genero:" textFill="#4f3a3a">
+               <font>
+                  <Font name="Book Antiqua" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="GeneroObra" layoutX="90.0" layoutY="78.0" prefHeight="25.0" prefWidth="265.0" />
+         </children>
+      </Pane>
    </children>
 </Pane>

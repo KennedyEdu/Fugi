@@ -10,6 +10,11 @@
 
 <Pane fx:id="AvaliadoAceito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DEDFDF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VE.Controler.FrontControler">
    <children>
+      <Label fx:id="errocaixa" layoutX="207.0" layoutY="81.0" text="Erro: Marque ao menos uma caixa!" textFill="#f54747" visible="false">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Label>
       <Label prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #4F3A3A;" text="                Gerenciador" textFill="#7e7474">
          <font>
             <Font name="Book Antiqua" size="15.0" />
@@ -20,7 +25,7 @@
             <Image url="@fotos/Captura%20de%20tela%202021-10-16%20194937.png" />
          </image>
       </ImageView>
-      <TextField fx:id="Pesquisa" layoutX="144.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" style="-fx-background-color: 000000;" text="Pesquisar">
+      <TextField fx:id="Pesquisa" layoutX="144.0" layoutY="104.0" opacity="0.6" prefHeight="36.0" prefWidth="350.0" promptText="Pesquisar" style="-fx-background-color: 000000;">
          <font>
             <Font name="Book Antiqua" size="12.0" />
          </font>
@@ -35,73 +40,66 @@
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="431.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Autores" textFill="#7e7474">
+      <Button layoutX="431.0" layoutY="26.0" mnemonicParsing="false" onAction="#AbrirADMAutores" style="-fx-background-color: #4F3A3A;" text="Autores" textFill="#7e7474">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Livros" textFill="#7e7474">
+      <Button layoutX="502.0" layoutY="26.0" mnemonicParsing="false" onAction="#AbrirADMObras" style="-fx-background-color: #4F3A3A;" text="Livros" textFill="#7e7474">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="470.0" layoutY="208.0" mnemonicParsing="false" style="-fx-background-color: DFDFDF;" />
-      <Button layoutX="470.0" layoutY="180.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="23.0" style="-fx-background-color: DFDFDF;" />
-      <Button layoutX="335.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #4F3A3A;" text="Avaliadores" textFill="#7e7474">
+      <Button layoutX="335.0" layoutY="26.0" mnemonicParsing="false" onAction="#AbrirADMAvaliadores" style="-fx-background-color: #4F3A3A;" text="Avaliadores" textFill="#7e7474">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="124.0" layoutY="374.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="91.0" style="-fx-background-color: #4F3A3A;" text="Novo&#10;&#10;" textAlignment="CENTER" textFill="#dedfdf">
+      <Button fx:id="Botao1" layoutX="124.0" layoutY="374.0" mnemonicParsing="false" onAction="#Clicked1" prefHeight="11.0" prefWidth="91.0" style="-fx-background-color: #4F3A3A;" text="Novo&#10;&#10;" textAlignment="CENTER" textFill="#dedfdf">
          <font>
             <Font name="Book Antiqua" size="12.0" />
          </font>
       </Button>
-      <CheckBox layoutX="50.0" layoutY="99.0" mnemonicParsing="false" text="ID" textFill="#4f3a3a">
+      <CheckBox fx:id="nomebox" layoutX="64.0" layoutY="125.0" mnemonicParsing="false" onAction="#Nometrue" selected="true" text="Nome" textFill="#4f3a3a">
          <font>
             <Font name="Book Antiqua" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="50.0" layoutY="132.0" mnemonicParsing="false" selected="true" text="Nome" textFill="#4f3a3a">
+      <CheckBox fx:id="obrabox" layoutX="64.0" layoutY="98.0" mnemonicParsing="false" onAction="#Obratrue" text="Obra" textFill="#4f3a3a">
          <font>
             <Font name="Book Antiqua" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="50.0" layoutY="115.0" mnemonicParsing="false" text="CPF" textFill="#4f3a3a">
-         <font>
-            <Font name="Book Antiqua" size="12.0" />
-         </font>
-      </CheckBox>
-      <Button layoutX="466.0" layoutY="110.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="16.0" style="-fx-background-color: #cecfcf;">
+      <Button layoutX="466.0" layoutY="110.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="21.0" prefWidth="16.0" style="-fx-background-color: #cecfcf;">
          <graphic>
-            <ImageView fitHeight="14.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BotaoPesquisa" fitHeight="14.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@fotos/Captura%20de%20tela%202021-10-16%20192019.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <TableView fx:id="Avaliadoreslist" layoutX="38.0" layoutY="169.0" prefHeight="200.0" prefWidth="525.0">
+      <Button fx:id="Botao2" layoutX="258.0" layoutY="374.0" mnemonicParsing="false" onAction="#Clicked2" prefHeight="10.0" prefWidth="86.0" style="-fx-background-color: #4F3A3A;" text="Editar" textAlignment="CENTER" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="Botao3" layoutX="388.0" layoutY="374.0" mnemonicParsing="false" onAction="#Clicked3" prefHeight="11.0" prefWidth="86.0" style="-fx-background-color: #4F3A3A;" text="Excluir&#10;&#10;&#10;" textAlignment="CENTER" textFill="#dedfdf">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="AutoresList" layoutX="48.0" layoutY="166.0" prefHeight="200.0" prefWidth="525.0">
          <columns>
-            <TableColumn editable="false" prefWidth="75.0" text="Nome:" />
-            <TableColumn editable="false" prefWidth="72.0" text="CPF:" />
-            <TableColumn prefWidth="75.0" text="Email:" />
-            <TableColumn prefWidth="75.0" text="Senha:" />
-            <TableColumn prefWidth="75.0" text="Id:" />
-            <TableColumn prefWidth="152.0" text="Endereço:" />
+            <TableColumn fx:id="Nomecl" editable="false" prefWidth="75.0" text="Nome:" />
+            <TableColumn fx:id="CPFcl" editable="false" prefWidth="72.0" text="CPF:" />
+            <TableColumn fx:id="Emailcl" editable="false" prefWidth="75.0" text="Email:" />
+            <TableColumn fx:id="Senhacl" editable="false" prefWidth="75.0" text="Senha:" />
+            <TableColumn fx:id="IdAutorcl" editable="false" prefWidth="75.0" text="Id:" />
+            <TableColumn fx:id="Endereçocl" editable="false" prefWidth="152.0" text="Endereço:" />
          </columns>
       </TableView>
-      <Button layoutX="258.0" layoutY="374.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="86.0" style="-fx-background-color: #4F3A3A;" text="Editar" textAlignment="CENTER" textFill="#dedfdf">
-         <font>
-            <Font name="Book Antiqua" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="388.0" layoutY="374.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="86.0" style="-fx-background-color: #4F3A3A;" text="Excluir&#10;&#10;&#10;" textAlignment="CENTER" textFill="#dedfdf">
-         <font>
-            <Font name="Book Antiqua" size="12.0" />
-         </font>
-      </Button>
-      <Pane fx:id="AdicionarAutor" layoutX="88.0" layoutY="102.0" prefHeight="265.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+      <Pane fx:id="Tela1" layoutX="88.0" layoutY="102.0" prefHeight="265.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
          <children>
             <Label layoutX="208.0" layoutY="91.0" text="CPF:" textFill="#4f3a3a">
                <font>
@@ -118,15 +116,15 @@
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoCPFAutor" layoutX="90.0" layoutY="109.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="NovoNomeAutor" layoutX="90.0" layoutY="23.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="NovoEndereçoAutor" layoutX="90.0" layoutY="66.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoCPF" layoutX="90.0" layoutY="109.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoNome" layoutX="90.0" layoutY="23.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoEndereço" layoutX="90.0" layoutY="66.0" prefHeight="25.0" prefWidth="265.0" />
             <Button fx:id="EnviarAutor" layoutX="355.0" layoutY="224.0" mnemonicParsing="false" onAction="#EnviarNovoAutor" style="-fx-background-color: #4F3A3A;" text="Enviar&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="CancelarAutor" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" onAction="#CancelarNovoAutor" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+            <Button fx:id="CancelarAutor" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" onAction="#Cancel1" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
@@ -136,16 +134,16 @@
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoSenhaAutor" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoSenha" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="265.0" />
             <Label layoutX="203.0" layoutY="134.0" text="Email:" textFill="#4f3a3a">
                <font>
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoEmailAutor" layoutX="90.0" layoutY="152.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NovoEmail" layoutX="90.0" layoutY="152.0" prefHeight="25.0" prefWidth="265.0" />
          </children>
       </Pane>
-      <Pane fx:id="AdicionarAutor1" layoutX="88.0" layoutY="49.0" prefHeight="320.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+      <Pane fx:id="Tela2" layoutX="88.0" layoutY="49.0" prefHeight="320.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
          <children>
             <Label layoutX="208.0" layoutY="91.0" text="CPF:" textFill="#4f3a3a">
                <font>
@@ -162,15 +160,15 @@
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoCPFAutor1" layoutX="90.0" layoutY="109.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="NovoNomeAutor1" layoutX="90.0" layoutY="23.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="NovoEndereçoAutor1" layoutX="90.0" layoutY="66.0" prefHeight="25.0" prefWidth="265.0" />
-            <Button fx:id="EnviarAutor1" layoutX="356.0" layoutY="269.0" mnemonicParsing="false" onAction="#EnviarNovoAutor" style="-fx-background-color: #4F3A3A;" text="Enviar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+            <TextField fx:id="CPFEditarUsur" layoutX="90.0" layoutY="109.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="NomeEditarUsur" layoutX="90.0" layoutY="23.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="EndereçoEditarUsur" layoutX="90.0" layoutY="66.0" prefHeight="25.0" prefWidth="265.0" />
+            <Button layoutX="356.0" layoutY="269.0" mnemonicParsing="false" onAction="#EditarAutor" style="-fx-background-color: #4F3A3A;" text="Enviar&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="CancelarAutor1" layoutX="14.0" layoutY="269.0" mnemonicParsing="false" onAction="#CancelarNovoAutor" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+            <Button fx:id="CancelarAutor1" layoutX="14.0" layoutY="269.0" mnemonicParsing="false" onAction="#Cancel2" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
@@ -180,29 +178,34 @@
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="IdAvaliadorNovo" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="SenhaEditarUsur" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="265.0" />
             <Label layoutX="203.0" layoutY="134.0" text="Email:" textFill="#4f3a3a">
                <font>
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoEmailAutor1" layoutX="90.0" layoutY="152.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="EmailEditarUsur" layoutX="90.0" layoutY="152.0" prefHeight="25.0" prefWidth="265.0" />
             <Label layoutX="214.0" layoutY="218.0" text="ID:" textFill="#4f3a3a">
                <font>
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoSenhaAutor11" layoutX="91.0" layoutY="236.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="IDEditarUsur" layoutX="91.0" layoutY="236.0" prefHeight="25.0" prefWidth="265.0" />
+            <Label fx:id="ErroID" layoutX="112.0" layoutY="261.0" text="Erro: ID não encontrado, ou não acessivel!" textFill="#ff5757" visible="false">
+               <font>
+                  <Font name="Book Antiqua" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Pane fx:id="AdicionarAutor2" layoutX="79.0" layoutY="101.0" prefHeight="155.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
+      <Pane fx:id="Tela3" layoutX="79.0" layoutY="101.0" prefHeight="155.0" prefWidth="445.0" style="-fx-background-color: DFDFDF; -fx-border-color: #7e7474;" visible="false">
          <children>
-            <Button fx:id="EnviarAutor2" layoutX="355.0" layoutY="114.0" mnemonicParsing="false" onAction="#EnviarNovoAutor" style="-fx-background-color: #4F3A3A;" text="excluir&#10;" textAlignment="CENTER" textFill="#dedfdf">
+            <Button layoutX="355.0" layoutY="114.0" mnemonicParsing="false" onAction="#ExcluirAutor" style="-fx-background-color: #4F3A3A;" text="excluir&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="CancelarAutor2" layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#CancelarNovoAutor" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
+            <Button fx:id="CancelarAutor2" layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#Cancel3" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #4F3A3A;" text="Cancelar&#10;" textAlignment="CENTER" textFill="#dedfdf">
                <font>
                   <Font name="Book Antiqua" size="13.0" />
                </font>
@@ -212,7 +215,12 @@
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="NovoID" layoutX="90.0" layoutY="65.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="IDExcluir" layoutX="90.0" layoutY="65.0" prefHeight="25.0" prefWidth="265.0" />
+            <Label fx:id="ErroIDExcluir" layoutX="111.0" layoutY="97.0" text="Erro: ID não encontrado, ou em avaliação!" textFill="#ff5757" visible="false">
+               <font>
+                  <Font name="Book Antiqua" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
