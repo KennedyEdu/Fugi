@@ -1,13 +1,11 @@
 package model.VO;
 
 
-import java.util.Date;
-
 public class ObraVO {
     private Long idObra;
     private String titulo;
     private String genero;
-    private Date ano;
+    private String ano;
     private AutorVO autor;
     private String estado;
 
@@ -15,11 +13,12 @@ public class ObraVO {
         if(idObra >= 0) 
             this.idObra = idObra; 
     }
-
+ 
     public Long getIdObra(){
         return this.idObra;
     }
 
+    
     public void setTitulo(String titulo){
         if(titulo != null && !(titulo.equals("")))
             this.titulo = titulo;
@@ -38,12 +37,12 @@ public class ObraVO {
         return this.genero;
     }
 
-    public void setAno(Date ano){
+    public void setAno(String ano){
         if(ano != null) 
             this.ano = ano;  
     }
 
-    public Date getAno(){
+    public String getAno(){
         return this.ano;
     }
 
@@ -67,5 +66,9 @@ public class ObraVO {
 
 	public void setIdAutor(long long1) {
 		autor.setIdAutor(long1);
+	}
+	
+	public Long getIdAutor() {
+		return autor.getIdAutor();
 	}
 }
