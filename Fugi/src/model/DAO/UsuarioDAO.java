@@ -22,22 +22,9 @@ public class UsuarioDAO <VO extends UsuarioVO> extends BaseDAO <VO>   {
 	            ptst.setString(3, vo.getCPF());
 	            ptst.setString(4, vo.getEmail());
 	            ptst.setString(5, vo.getSenha());
-	            ptst.setInt(6, vo.getNivel());
+	            ptst.setInt(6, vo.getNivel()); 
+	            ptst.executeUpdate();
 
-	            
-	            int affectedRows = ptst.executeUpdate();
-
-	            if (affectedRows == 0){
-	                throw new SQLException("A inserção falhou. Nenhuma linha foi alterada.");
-	            }
-
-	            ResultSet generatedKeys = ptst.getGeneratedKeys();
-
-	            if(generatedKeys.next()){ 
-	                vo.setIdUsuario(generatedKeys.getLong(1));
-	            } else{
-	                throw new SQLException("A inserção falhou. nenhum id foi retornado.");
-	            }
 	        }catch(SQLException erro) {
 	            erro.printStackTrace();
 	        }
@@ -47,7 +34,7 @@ public class UsuarioDAO <VO extends UsuarioVO> extends BaseDAO <VO>   {
 	@Override
 	public void atualizar(VO vo) throws SQLException {
 	      conectar = getConnection();
-	        String sql = "UPDATE usuario SET (nome, cpf, email, senha, endereco) = (?, ?, ?, ?, ?) WHERE id= ?";
+	        String sql = "UPDATE usuario SET nome = ?, cpf = ?, email = ?, senha = ?, endereco = ? WHERE id = ?";
 	        PreparedStatement ptst;
 	        try { 
 	            ptst = conectar.prepareStatement(sql);
@@ -56,6 +43,7 @@ public class UsuarioDAO <VO extends UsuarioVO> extends BaseDAO <VO>   {
 	            ptst.setString(3, vo.getEmail());
 	            ptst.setString(4, vo.getSenha());
 	            ptst.setString(5, vo.getEndereco());
+	            ptst.setLong(6, vo.getIdUsuario());
 	            ptst.executeUpdate();
 	        }catch(SQLException erro) {
 	            erro.printStackTrace();
@@ -86,7 +74,7 @@ public class UsuarioDAO <VO extends UsuarioVO> extends BaseDAO <VO>   {
 	        Statement st;
 	        ResultSet rs;
 	    
-	        st = conectar.createStatement();
+	        st = getConnection().prepareStatement(sql);
 	        rs = st.executeQuery(sql);
 	        return rs;
 	       

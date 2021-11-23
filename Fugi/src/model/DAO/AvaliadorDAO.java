@@ -50,12 +50,12 @@ public class AvaliadorDAO extends UsuarioDAO<AvaliadorVO>{
 
     public ResultSet listar() throws SQLException{
         conectar = getConnection();
-        String sql = "select * from avaliador left join usuario on avaliador.id_avaliador_usuario = usuario.usuario.id";
+        String sql = "select * from avaliador left join usuario on id_avaliador_usuario = id";
     
         Statement st;
         ResultSet rs;
     
-        st = conectar.createStatement();
+        st = getConnection().prepareStatement(sql);
         rs = st.executeQuery(sql);
         return rs;
         }

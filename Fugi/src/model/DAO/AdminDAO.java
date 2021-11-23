@@ -51,13 +51,14 @@ public class AdminDAO extends UsuarioDAO<AdminVO>{
 
     public ResultSet listar() throws SQLException{
         conectar = getConnection();
-        String sql = "select * from admin left join usuario on autor.id_admin_usuario = usuario.usuario.id";
+        String sql = "select * from admin left join usuario on id_admin_usuario = id";
     
         Statement st;
         ResultSet rs;
     
-        st = conectar.createStatement();
+        st = getConnection().prepareStatement(sql);
         rs = st.executeQuery(sql);
         return rs;
+   
         }
 }

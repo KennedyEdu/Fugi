@@ -12,13 +12,12 @@ public class AvaliaObraDAO extends BaseDAO<AvaliaObraVO> {
     public void inserir(AvaliaObraVO avaliaObraVo) {
 
         conectar = getConnection();
-        String sql = "insert into avaliaobra (id_avaliaobra_obra,id_avaliaobra_autor,id_avaliaobra_avaliador) values (?, ?, ?)";
+        String sql = "insert into avaliaobra (id_avaliaobra_obra,id_avaliaobra_avaliador) values (?, ?)";
         PreparedStatement ptst;
         try{
             ptst = conectar.prepareStatement(sql);
             ptst.setLong(1, avaliaObraVo.getObra().getIdObra());
-            ptst.setLong(2, avaliaObraVo.getAutor().getIdAutor());
-            ptst.setLong(3, avaliaObraVo.getAvaliador().getIdAvaliador());
+            ptst.setLong(2, avaliaObraVo.getAvaliador().getIdAvaliador());
 
             ptst.execute();
         }catch(SQLException erro) {
@@ -36,23 +35,22 @@ public class AvaliaObraDAO extends BaseDAO<AvaliaObraVO> {
         Statement st;
         ResultSet rs;
     
-        st = conectar.createStatement();
+        st = getConnection().prepareStatement(sql);
         rs = st.executeQuery(sql);
-        return rs; 
-}
+        return rs;
+	}
 	
 
 	@Override
 	public void atualizar(AvaliaObraVO entity) throws SQLException {
 		 conectar = getConnection();
-	        String sql = "UPDATE avaliaobra SET (id_avaliaobra_obra,id_avaliaobra_autor,id_avaliaobra_avaliador) = (?, ?, ?) WHERE id_avaliaobra= ?";
+	        String sql = "UPDATE avaliaobra SET id_avaliaobra_obra = ?, id_avaliaobra_avaliador  = ? WHERE id_avaliaobra= ?";
 	        PreparedStatement ptst;
 	        try { 
 	            ptst = conectar.prepareStatement(sql);
 	            ptst.setLong(1, entity.getObra().getIdObra());
-	            ptst.setLong(2, entity.getAutor().getIdAutor());
-	            ptst.setLong(3, entity.getAvaliador().getIdAvaliador());
-	            ptst.setLong(4, entity.getIdAvalia());
+	            ptst.setLong(2, entity.getAvaliador().getIdAvaliador());
+	            ptst.setLong(3, entity.getIdAvalia());
 	            ptst.executeUpdate();
 	        }catch(SQLException erro) {
 	            erro.printStackTrace();

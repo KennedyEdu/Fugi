@@ -51,12 +51,12 @@ public class AutorDAO extends UsuarioDAO<AutorVO>{
 
     public ResultSet listar() throws SQLException{
         conectar = getConnection();
-        String sql = "select * from autor left join usuario on autor.id_autor_usuario = usuario.usuario.id";
+        String sql = "select * from autor left join usuario on id_autor_usuario = id";
     
         Statement st;
         ResultSet rs;
     
-        st = conectar.createStatement();
+        st = getConnection().prepareStatement(sql);
         rs = st.executeQuery(sql);
         return rs;
         }
