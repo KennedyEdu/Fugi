@@ -7,7 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TelaAdmAutor extends Application {
-    @Override
+
+	@Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("VE/TelaAdmAutor.fxml"));
 
